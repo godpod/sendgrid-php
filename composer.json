@@ -1,7 +1,7 @@
 {
   "name": "godpod/sendgrid",
   "description": "This library allows you to quickly and easily send emails or make api calls through SendGrid using PHP.",
-  "version": "2.2.0",
+  "version": "2.2.0.1",
   "homepage": "http://github.com/godpod/sendgrid-php",
   "license": "MIT",
   "keywords": ["SendGrid", "sendgrid", "email", "send", "grid"],
