@@ -3,92 +3,96 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Sendgrid-php by sendgrid</title>
-
+    <title>Sendgrid PHP SDK by godpod</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
   <body>
-    <div class="wrapper">
+
       <header>
-        <h1>Sendgrid-php</h1>
+        <h1>Sendgrid PHP SDK</h1>
         <p>SendGrid PHP helper library.</p>
-
-        <p class="view"><a href="https://github.com/sendgrid/sendgrid-php">View the Project on GitHub <small>sendgrid/sendgrid-php</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/sendgrid/sendgrid-php/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/sendgrid/sendgrid-php/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/sendgrid/sendgrid-php">View On <strong>GitHub</strong></a></li>
-        </ul>
       </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/godpod/sendgrid-php" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/godpod/sendgrid-php/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/godpod/sendgrid-php/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
       <section>
         <p>This library allows you to quickly and easily send emails through SendGrid using PHP.</p>
 
-<div class="highlight"><pre><span class="nv">$sendgrid</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid</span><span class="p">(</span><span class="s1">'username'</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">);</span>
-<span class="nv">$mail</span>     <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'foo@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addTo</span><span class="p">(</span><span class="s1">'dude@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">setFrom</span><span class="p">(</span><span class="s1">'me@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">setSubject</span><span class="p">(</span><span class="s1">'Subject goes here'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">setText</span><span class="p">(</span><span class="s1">'Hello World!'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">setHtml</span><span class="p">(</span><span class="s1">'&lt;strong&gt;Hello World!&lt;/strong&gt;'</span><span class="p">);</span>
-
-<span class="nv">$sendgrid</span><span class="o">-&gt;</span><span class="na">smtp</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="nv">$mail</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$sendgrid</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid</span>(<span class="pl-s1"><span class="pl-pds">'</span>username<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>password<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span>     <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>foo@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addTo(<span class="pl-s1"><span class="pl-pds">'</span>dude@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       setFrom(<span class="pl-s1"><span class="pl-pds">'</span>me@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       setSubject(<span class="pl-s1"><span class="pl-pds">'</span>Subject goes here<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       setText(<span class="pl-s1"><span class="pl-pds">'</span>Hello World!<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       setHtml(<span class="pl-s1"><span class="pl-pds">'</span>&lt;strong&gt;Hello World!&lt;/strong&gt;<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-vo">$sendgrid</span><span class="pl-k">-&gt;</span><span class="pl-vo">smtp</span><span class="pl-k">-&gt;</span>send(<span class="pl-vo">$mail</span>);</span></pre></div>
 
 <h2>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>The following recommended installation requires <a href="http://getcomposer.org/">composer</a>. If you are unfamiliar with composer see the <a href="http://getcomposer.org/doc/01-basic-usage.md#installation">composer installation instructions</a>.</p>
 
 <p>Add the following to your <code>composer.json</code> file:</p>
 
-<div class="highlight"><pre><span class="p">{</span>  
-  <span class="nt">"require"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">"sendgrid/sendgrid"</span><span class="p">:</span> <span class="s2">"~1.0.0"</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight highlight-json"><pre>{  
+  <span class="pl-s1"><span class="pl-pds">"</span>require<span class="pl-pds">"</span></span>: {
+    <span class="pl-s1"><span class="pl-pds">"</span>sendgrid/sendgrid<span class="pl-pds">"</span></span>: <span class="pl-s1"><span class="pl-pds">"</span>~1.0.0<span class="pl-pds">"</span></span>
+  }
+}</pre></div>
 
 <p>Install sendgrid-php and its dependencies:</p>
 
-<div class="highlight"><pre>composer install
-</pre></div>
+<div class="highlight highlight-bash"><pre>composer install</pre></div>
 
 <p>Load sendgrid-php and its dependencies into your project:</p>
 
-<div class="highlight"><pre><span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">'</span>vendor/autoload.php<span class="pl-pds">'</span></span>;</span></pre></div>
 
 <h3>
-<a name="alternative-installation" class="anchor" href="#alternative-installation"><span class="octicon octicon-link"></span></a>Alternative Installation</h3>
+<a id="alternative-installation" class="anchor" href="#alternative-installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alternative Installation</h3>
 
 <p>If you choose not to use composer you can do the following alternative installation using git:</p>
 
-<div class="highlight"><pre>git clone https://github.com/sendgrid/sendgrid-php.git
-</pre></div>
+<div class="highlight highlight-bash"><pre>git clone https://github.com/sendgrid/sendgrid-php.git</pre></div>
 
 <p>Then require the autoloader from your php script:</p>
 
-<div class="highlight"><pre><span class="k">require</span> <span class="s1">'../path/to/sendgrid-php/SendGrid_loader.php'</span><span class="p">;</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">'</span>../path/to/sendgrid-php/SendGrid_loader.php<span class="pl-pds">'</span></span>;</span></pre></div>
 
 <p>Finally, install SwiftMailer using pear.</p>
 
-<div class="highlight"><pre>pear channel-discover pear.swiftmailer.org
-pear install swift/swift
-</pre></div>
+<div class="highlight highlight-bash"><pre>pear channel-discover pear.swiftmailer.org
+pear install swift/swift</pre></div>
 
 <p><em>Note: If you do not plan on sending using SMTP, you can skip installation of swiftmailer.</em></p>
 
 <h2>
-<a name="sendgrid-apis" class="anchor" href="#sendgrid-apis"><span class="octicon octicon-link"></span></a>SendGrid APIs</h2>
+<a id="sendgrid-apis" class="anchor" href="#sendgrid-apis" aria-hidden="true"><span class="octicon octicon-link"></span></a>SendGrid APIs</h2>
 
 <p>SendGrid provides two methods of sending email: the Web API, and SMTP API.  SendGrid recommends using the SMTP API for sending emails.
 For an explanation of the benefits of each, refer to <a href="http://docs.sendgrid.com/documentation/get-started/integrate/examples/smtp-vs-rest/">http://docs.sendgrid.com/documentation/get-started/integrate/examples/smtp-vs-rest/</a>.</p>
@@ -96,7 +100,7 @@ For an explanation of the benefits of each, refer to <a href="http://docs.sendgr
 <p>This library implements a common interface to make it very easy to use either API.</p>
 
 <h2>
-<a name="pre-usage" class="anchor" href="#pre-usage"><span class="octicon octicon-link"></span></a>Pre-Usage</h2>
+<a id="pre-usage" class="anchor" href="#pre-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pre-Usage</h2>
 
 <p>Before we begin using the library, its important to understand a few things about the library architecture...</p>
 
@@ -119,162 +123,151 @@ For an explanation of the benefits of each, refer to <a href="http://docs.sendgr
 <li>Sending the mail using either SMTP API or Web API.</li>
 </ol>
 </li>
-</ul><h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+</ul>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>To begin using this library, initialize the SendGrid object with your SendGrid credentials.</p>
 
-<div class="highlight"><pre><span class="nv">$sendgrid</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid</span><span class="p">(</span><span class="s1">'username'</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$sendgrid</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid</span>(<span class="pl-s1"><span class="pl-pds">'</span>username<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>password<span class="pl-pds">'</span></span>);</span></pre></div>
 
 <p>Create a new SendGrid Mail object and add your message details.</p>
 
-<div class="highlight"><pre><span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'foo@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">setFrom</span><span class="p">(</span><span class="s1">'me@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">setSubject</span><span class="p">(</span><span class="s1">'Subject goes here'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">setText</span><span class="p">(</span><span class="s1">'Hello World!'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">setHtml</span><span class="p">(</span><span class="s1">'&lt;strong&gt;Hello World!&lt;/strong&gt;'</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$mail</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>foo@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       setFrom(<span class="pl-s1"><span class="pl-pds">'</span>me@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       setSubject(<span class="pl-s1"><span class="pl-pds">'</span>Subject goes here<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       setText(<span class="pl-s1"><span class="pl-pds">'</span>Hello World!<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       setHtml(<span class="pl-s1"><span class="pl-pds">'</span>&lt;strong&gt;Hello World!&lt;/strong&gt;<span class="pl-pds">'</span></span>);</span></pre></div>
 
 <p>Send it using the API of your choice (SMTP or Web)</p>
 
-<div class="highlight"><pre><span class="nv">$sendgrid</span><span class="o">-&gt;</span><span class="na">smtp</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="nv">$mail</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$sendgrid</span><span class="pl-k">-&gt;</span><span class="pl-vo">smtp</span><span class="pl-k">-&gt;</span>send(<span class="pl-vo">$mail</span>);</span></pre></div>
 
 <p>Or </p>
 
-<div class="highlight"><pre><span class="nv">$sendgrid</span><span class="o">-&gt;</span><span class="na">web</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="nv">$mail</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$sendgrid</span><span class="pl-k">-&gt;</span><span class="pl-vo">web</span><span class="pl-k">-&gt;</span>send(<span class="pl-vo">$mail</span>);</span></pre></div>
 
 <h3>
-<a name="categories" class="anchor" href="#categories"><span class="octicon octicon-link"></span></a>Categories</h3>
+<a id="categories" class="anchor" href="#categories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Categories</h3>
 
 <p>Categories are used to group email statistics provided by SendGrid.</p>
 
 <p>To use a category, simply set the category name.  Note: there is a maximum of 10 categories per email.</p>
 
-<div class="highlight"><pre><span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'foo@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="o">...</span>
-       <span class="nx">addCategory</span><span class="p">(</span><span class="s2">"Category 1"</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addCategory</span><span class="p">(</span><span class="s2">"Category 2"</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$mail</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>foo@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       <span class="pl-k">...</span></span>
+<span class="pl-s2">       addCategory(<span class="pl-s1"><span class="pl-pds">"</span>Category 1<span class="pl-pds">"</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addCategory(<span class="pl-s1"><span class="pl-pds">"</span>Category 2<span class="pl-pds">"</span></span>);</span></pre></div>
 
 <h3>
-<a name="attachments" class="anchor" href="#attachments"><span class="octicon octicon-link"></span></a>Attachments</h3>
+<a id="attachments" class="anchor" href="#attachments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attachments</h3>
 
 <p>Attachments are currently file based only, with future plans for an in memory implementation as well.</p>
 
 <p>File attachments are limited to 7 MB per file.</p>
 
-<div class="highlight"><pre><span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'foo@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="o">...</span>
-       <span class="nx">addAttachment</span><span class="p">(</span><span class="s2">"../path/to/file.txt"</span><span class="p">);</span>    
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$mail</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>foo@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       <span class="pl-k">...</span></span>
+<span class="pl-s2">       addAttachment(<span class="pl-s1"><span class="pl-pds">"</span>../path/to/file.txt<span class="pl-pds">"</span></span>);    </span></pre></div>
 
 <p><strong>Important Gotcha</strong>: <code>setBcc</code> is not supported with attachments. This is by design. Instead use multiple <code>addTo</code>s. Each user will receive their own personalized email with that setup, and only see their own email.</p>
 
 <h3>
-<a name="bcc" class="anchor" href="#bcc"><span class="octicon octicon-link"></span></a>Bcc</h3>
+<a id="bcc" class="anchor" href="#bcc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bcc</h3>
 
 <p>Use multiple <code>addTo</code>s as a superior alternative to <code>setBcc</code>.</p>
 
-<div class="highlight"><pre><span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'foo@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addTo</span><span class="p">(</span><span class="s1">'someotheraddress@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addTo</span><span class="p">(</span><span class="s1">'another@another.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="o">...</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$mail</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>foo@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addTo(<span class="pl-s1"><span class="pl-pds">'</span>someotheraddress@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addTo(<span class="pl-s1"><span class="pl-pds">'</span>another@another.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       <span class="pl-k">...</span></span></pre></div>
 
-<p>Standard <code>setBcc</code> will hide who the email is addressed to. If you use the multiple addTo, each user will receive a personalized email showing **only* their email. This is more friendly and more personal. Additionally, it is a good idea to use multiple <code>addTo</code>s because setBcc is not supported with attachments. This is by design.</p>
+<p>Standard <code>setBcc</code> will hide who the email is addressed to. If you use the multiple addTo, each user will receive a personalized email showing *<em>only</em> their email. This is more friendly and more personal. Additionally, it is a good idea to use multiple <code>addTo</code>s because setBcc is not supported with attachments. This is by design.</p>
 
 <p>So just remember, when thinking 'bcc', instead use multiple <code>addTo</code>s.</p>
 
 <h3>
-<a name="from-name-and-reply-to" class="anchor" href="#from-name-and-reply-to"><span class="octicon octicon-link"></span></a>From-Name and Reply-To</h3>
+<a id="from-name-and-reply-to" class="anchor" href="#from-name-and-reply-to" aria-hidden="true"><span class="octicon octicon-link"></span></a>From-Name and Reply-To</h3>
 
 <p>There are two handy helper methods for setting the From-Name and Reply-To for a
 message</p>
 
-<div class="highlight"><pre><span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'foo@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">setReplyTo</span><span class="p">(</span><span class="s1">'someone.else@example.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">setFromName</span><span class="p">(</span><span class="s1">'John Doe'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="o">...</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$mail</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>foo@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       setReplyTo(<span class="pl-s1"><span class="pl-pds">'</span>someone.else@example.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       setFromName(<span class="pl-s1"><span class="pl-pds">'</span>John Doe<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       <span class="pl-k">...</span></span></pre></div>
 
 <h3>
-<a name="substitutions" class="anchor" href="#substitutions"><span class="octicon octicon-link"></span></a>Substitutions</h3>
+<a id="substitutions" class="anchor" href="#substitutions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Substitutions</h3>
 
 <p>Substitutions can be used to customize multi-recipient emails, and tailor them for the user</p>
 
-<div class="highlight"><pre><span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'john@somewhere.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addTo</span><span class="p">(</span><span class="s2">"harry@somewhere.com"</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addTo</span><span class="p">(</span><span class="s2">"Bob@somewhere.com"</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="o">...</span>
-       <span class="nx">setHtml</span><span class="p">(</span><span class="s2">"Hey %name%, we've seen that you've been gone for a while"</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addSubstitution</span><span class="p">(</span><span class="s2">"%name%"</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s2">"John"</span><span class="p">,</span> <span class="s2">"Harry"</span><span class="p">,</span> <span class="s2">"Bob"</span><span class="p">));</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$mail</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>john@somewhere.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addTo(<span class="pl-s1"><span class="pl-pds">"</span>harry@somewhere.com<span class="pl-pds">"</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addTo(<span class="pl-s1"><span class="pl-pds">"</span>Bob@somewhere.com<span class="pl-pds">"</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       <span class="pl-k">...</span></span>
+<span class="pl-s2">       setHtml(<span class="pl-s1"><span class="pl-pds">"</span>Hey %name%, we've seen that you've been gone for a while<span class="pl-pds">"</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addSubstitution(<span class="pl-s1"><span class="pl-pds">"</span>%name%<span class="pl-pds">"</span></span>, <span class="pl-s3">array</span>(<span class="pl-s1"><span class="pl-pds">"</span>John<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>Harry<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>Bob<span class="pl-pds">"</span></span>));</span></pre></div>
 
 <h3>
-<a name="sections" class="anchor" href="#sections"><span class="octicon octicon-link"></span></a>Sections</h3>
+<a id="sections" class="anchor" href="#sections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sections</h3>
 
 <p>Sections can be used to further customize messages for the end users. A section is only useful in conjunction with a substition value.</p>
 
-<div class="highlight"><pre><span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'john@somewhere.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addTo</span><span class="p">(</span><span class="s2">"harry@somewhere.com"</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addTo</span><span class="p">(</span><span class="s2">"Bob@somewhere.com"</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="o">...</span>
-       <span class="nx">setHtml</span><span class="p">(</span><span class="s2">"Hey %name%, you work at %place%"</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addSubstitution</span><span class="p">(</span><span class="s2">"%name%"</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s2">"John"</span><span class="p">,</span> <span class="s2">"Harry"</span><span class="p">,</span> <span class="s2">"Bob"</span><span class="p">))</span><span class="o">-&gt;</span>
-       <span class="na">addSubstitution</span><span class="p">(</span><span class="s2">"%place%"</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s2">"%office%"</span><span class="p">,</span> <span class="s2">"%office%"</span><span class="p">,</span> <span class="s2">"%home%"</span><span class="p">))</span><span class="o">-&gt;</span>
-       <span class="na">addSection</span><span class="p">(</span><span class="s2">"%office%"</span><span class="p">,</span> <span class="s2">"an office"</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addSection</span><span class="p">(</span><span class="s2">"%home%"</span><span class="p">,</span> <span class="s2">"your house"</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$mail</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>john@somewhere.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addTo(<span class="pl-s1"><span class="pl-pds">"</span>harry@somewhere.com<span class="pl-pds">"</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addTo(<span class="pl-s1"><span class="pl-pds">"</span>Bob@somewhere.com<span class="pl-pds">"</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       <span class="pl-k">...</span></span>
+<span class="pl-s2">       setHtml(<span class="pl-s1"><span class="pl-pds">"</span>Hey %name%, you work at %place%<span class="pl-pds">"</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addSubstitution(<span class="pl-s1"><span class="pl-pds">"</span>%name%<span class="pl-pds">"</span></span>, <span class="pl-s3">array</span>(<span class="pl-s1"><span class="pl-pds">"</span>John<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>Harry<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>Bob<span class="pl-pds">"</span></span>))<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addSubstitution(<span class="pl-s1"><span class="pl-pds">"</span>%place%<span class="pl-pds">"</span></span>, <span class="pl-s3">array</span>(<span class="pl-s1"><span class="pl-pds">"</span>%office%<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>%office%<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>%home%<span class="pl-pds">"</span></span>))<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addSection(<span class="pl-s1"><span class="pl-pds">"</span>%office%<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>an office<span class="pl-pds">"</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addSection(<span class="pl-s1"><span class="pl-pds">"</span>%home%<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>your house<span class="pl-pds">"</span></span>);</span></pre></div>
 
 <h3>
-<a name="unique-arguments" class="anchor" href="#unique-arguments"><span class="octicon octicon-link"></span></a>Unique Arguments</h3>
+<a id="unique-arguments" class="anchor" href="#unique-arguments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unique Arguments</h3>
 
 <p>Unique Arguments are used for tracking purposes</p>
 
-<div class="highlight"><pre><span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'foo@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="o">...</span>
-       <span class="nx">addUniqueArgument</span><span class="p">(</span><span class="s2">"Customer"</span><span class="p">,</span> <span class="s2">"Someone"</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addUniqueArgument</span><span class="p">(</span><span class="s2">"location"</span><span class="p">,</span> <span class="s2">"Somewhere"</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$mail</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>foo@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       <span class="pl-k">...</span></span>
+<span class="pl-s2">       addUniqueArgument(<span class="pl-s1"><span class="pl-pds">"</span>Customer<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>Someone<span class="pl-pds">"</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addUniqueArgument(<span class="pl-s1"><span class="pl-pds">"</span>location<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>Somewhere<span class="pl-pds">"</span></span>);</span></pre></div>
 
 <h3>
-<a name="filter-settings" class="anchor" href="#filter-settings"><span class="octicon octicon-link"></span></a>Filter Settings</h3>
+<a id="filter-settings" class="anchor" href="#filter-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filter Settings</h3>
 
 <p>Filter Settings are used to enable and disable apps, and to pass parameters to those apps.</p>
 
-<div class="highlight"><pre><span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'foo@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="o">...</span>
-       <span class="nx">addFilterSetting</span><span class="p">(</span><span class="s2">"gravatar"</span><span class="p">,</span> <span class="s2">"enable"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addFilterSetting</span><span class="p">(</span><span class="s2">"footer"</span><span class="p">,</span> <span class="s2">"enable"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addFilterSetting</span><span class="p">(</span><span class="s2">"footer"</span><span class="p">,</span> <span class="s2">"text/plain"</span><span class="p">,</span> <span class="s2">"Here is a plain text footer"</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="na">addFilterSetting</span><span class="p">(</span><span class="s2">"footer"</span><span class="p">,</span> <span class="s2">"text/html"</span><span class="p">,</span> <span class="s2">"&lt;p style='color:red;'&gt;Here is an HTML footer&lt;/p&gt;"</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$mail</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>foo@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       <span class="pl-k">...</span></span>
+<span class="pl-s2">       addFilterSetting(<span class="pl-s1"><span class="pl-pds">"</span>gravatar<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>enable<span class="pl-pds">"</span></span>, <span class="pl-c1">1</span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addFilterSetting(<span class="pl-s1"><span class="pl-pds">"</span>footer<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>enable<span class="pl-pds">"</span></span>, <span class="pl-c1">1</span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addFilterSetting(<span class="pl-s1"><span class="pl-pds">"</span>footer<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>text/plain<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>Here is a plain text footer<span class="pl-pds">"</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       addFilterSetting(<span class="pl-s1"><span class="pl-pds">"</span>footer<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>text/html<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>&lt;p style='color:red;'&gt;Here is an HTML footer&lt;/p&gt;<span class="pl-pds">"</span></span>);</span></pre></div>
 
 <h3>
-<a name="headers" class="anchor" href="#headers"><span class="octicon octicon-link"></span></a>Headers</h3>
+<a id="headers" class="anchor" href="#headers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Headers</h3>
 
 <p>Headers can be used to add existing sendgrid functionality (such as for categories or filters), or custom headers can be added as necessary.</p>
 
-<div class="highlight"><pre><span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendGrid\Mail</span><span class="p">();</span>
-<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">addTo</span><span class="p">(</span><span class="s1">'foo@bar.com'</span><span class="p">)</span><span class="o">-&gt;</span>
-       <span class="o">...</span>
-       <span class="nx">addHeader</span><span class="p">(</span><span class="s2">"category"</span><span class="p">,</span> <span class="s2">"My New Category"</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$mail</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">SendGrid\</span><span class="pl-s3">Mail</span>();</span>
+<span class="pl-s2"><span class="pl-vo">$mail</span><span class="pl-k">-&gt;</span>addTo(<span class="pl-s1"><span class="pl-pds">'</span>foo@bar.com<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span></span>
+<span class="pl-s2">       <span class="pl-k">...</span></span>
+<span class="pl-s2">       addHeader(<span class="pl-s1"><span class="pl-pds">"</span>category<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>My New Category<span class="pl-pds">"</span></span>);</span></pre></div>
 
 <h2>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <ol>
 <li>Fork it</li>
@@ -282,33 +275,33 @@ message</p>
 <li>Commit your changes (<code>git commit -am 'Added some feature'</code>)</li>
 <li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
 <li>Create new Pull Request</li>
-</ol><h2>
-<a name="running-tests" class="anchor" href="#running-tests"><span class="octicon octicon-link"></span></a>Running Tests</h2>
+</ol>
+
+<h2>
+<a id="running-tests" class="anchor" href="#running-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running Tests</h2>
 
 <p>The existing tests in the <code>Test</code> directory can be run using <a href="https://github.com/sebastianbergmann/phpunit/">PHPUnit</a> with the following command:</p>
 
-<div class="highlight"><pre>composer update --dev
-vendor/bin/phpunit Test/
-</pre></div>
+<div class="highlight highlight-bash"><pre>composer update --dev
+vendor/bin/phpunit Test/</pre></div>
 
 <p>or if you already have PHPUnit installed globally.</p>
 
-<div class="highlight"><pre>phpunit Test/
-</pre></div>
+<div class="highlight highlight-bash"><pre>phpunit Test/</pre></div>
 
 <h2>
-<a name="known-issues" class="anchor" href="#known-issues"><span class="octicon octicon-link"></span></a>Known Issues</h2>
+<a id="known-issues" class="anchor" href="#known-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known Issues</h2>
 
 <ul>
 <li>When using the smtp version (which is built on top of swiftmailer), any FROM names with parentheses will have the content of the parentheses stripped out. If this happens please use the web version of the library. Read more about this in <a href="https://github.com/sendgrid/sendgrid-php/issues/27">issue #27</a>.</li>
 </ul>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/sendgrid">sendgrid</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p>Project maintained by <a href="https://github.com/godpod">godpod</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
