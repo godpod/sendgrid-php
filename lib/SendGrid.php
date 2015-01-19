@@ -33,7 +33,7 @@ class SendGrid {
     $form['api_user'] = $this->api_user; 
     $form['api_key']  = $this->api_key; 
 
-    $response = $this->makeRequest($this->url.$endpoint, $form);
+    $response = $this->makeRequest($this->url.$command, $form);
 
     return $response;
   }
@@ -59,7 +59,7 @@ class SendGrid {
         if($http_method == "post")
             $response = $this->makeRequest($url, $form);
         else if($http_method == "get")
-            $response =$this->makeRequest($url, $form, 0);
+            $response =$this->makeRequest($url, $form, false);
 
         if(isset($response))
             return $response;
@@ -71,7 +71,7 @@ class SendGrid {
    * @param $form array web ready version of SendGrid\Email
    * @return stdClass parsed JSON returned from SendGrid
    */
-  private function makeRequest($url, $form, $post = 1) {
+  private function makeRequest($url, $form, $post = true) {
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, $this->url);
