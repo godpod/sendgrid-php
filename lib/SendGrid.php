@@ -74,7 +74,7 @@ class SendGrid {
   private function makeRequest($url, $form, $post = true) {
     $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_URL, $this->url);
+    curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_POST, $post);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $form);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
