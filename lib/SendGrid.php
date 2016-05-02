@@ -76,7 +76,6 @@ class SendGrid {
 
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_POST, $post);
-    curl_setopt($ch, CURLOPT_SAFE_UPLOAD, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $form);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
